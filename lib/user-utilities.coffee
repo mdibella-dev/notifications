@@ -109,7 +109,7 @@ module.exports =
       contentType: "application/json"
     })
     fetch 'https://atom.io/api/updates', {headers: githubHeaders}
-      .then (r) -> if r.ok then r.json() else Promise.reject r.statusCode
+      .then (r) -> if r.ok then r.json() else Promise.reject new Error "Fetching updates resulted in status #{r.status}"
 
   checkAtomUpToDate: ->
     @getLatestAtomData().then (latestAtomData) ->
@@ -131,7 +131,7 @@ module.exports =
       contentType: "application/json"
     })
     fetch "https://atom.io/api/packages/#{packageName}", {headers: githubHeaders}
-      .then (r) -> if r.ok then r.json() else Promise.reject r.statusCode
+      .then (r) -> if r.ok then r.json() else Promise.reject new Error "Fetching package resulted in status #{r.status}"
 
   checkPackageUpToDate: (packageName) ->
     @getLatestPackageData(packageName).then (latestPackageData) =>
