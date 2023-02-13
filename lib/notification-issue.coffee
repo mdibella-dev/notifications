@@ -102,19 +102,19 @@ class NotificationIssue
 
         @issueBody = """
           <!--
-          Have you read Atom's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/atom/.github/blob/master/CODE_OF_CONDUCT.md
+          Have you read Pulsar's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://pulsar-edit.dev/docs/resources/conduct/
 
-          Do you want to ask a question? Are you looking for support? The Atom message board is the best place for getting support: https://discuss.atom.io
+          Do you want to ask a question? Are you looking for support? The Pulsar message board is the best place for getting support: https://github.com/orgs/pulsar-edit/discussions
           -->
 
           ### Prerequisites
 
           * [ ] Put an X between the brackets on this line if you have done all of the following:
-              * Reproduced the problem in Safe Mode: <https://flight-manual.atom.io/hacking-atom/sections/debugging/#using-safe-mode>
-              * Followed all applicable steps in the debugging guide: <https://flight-manual.atom.io/hacking-atom/sections/debugging/>
-              * Checked the FAQs on the message board for common solutions: <https://discuss.atom.io/c/faq>
-              * Checked that your issue isn't already filed: <https://github.com/issues?q=is%3Aissue+user%3Aatom>
-              * Checked that there is not already an Atom package that provides the described functionality: <https://atom.io/packages>
+              * Reproduced the problem in Safe Mode: <https://pulsar-edit.dev/docs/atom-archive/faq/sections/what-does-safe-mode-do.html/#using-safe-mode>
+              * Followed all applicable steps in the debugging guide: <https://pulsar-edit.dev/docs/atom-archive/hacking-atom/#debugging/>
+              * Checked the FAQs on the message board for common solutions: <https://pulsar-edit.dev/docs/launch-manual/sections/faq/>
+              * Checked that your issue isn't already filed: <https://github.com/issues?q=is%3Aissue+user%3Apulsar-edit+is%3Aopen>
+              * Checked that there is not already an Pulsar package that provides the described functionality: <https://web.pulsar-edit.dev/>
 
           ### Description
 
@@ -136,7 +136,7 @@ class NotificationIssue
 
           ### Versions
 
-          **Atom**: #{atom.getVersion()} #{process.arch}
+          **Pulsar**: #{atom.getVersion()} #{process.arch}
           **Electron**: #{process.versions.electron}
           **OS**: #{systemName}
           **Thrown From**: #{packageMessage}
