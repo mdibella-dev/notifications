@@ -168,7 +168,7 @@ class NotificationElement
       issueButton.remove()
       fatalNotification.textContent = "The error was thrown from the #{packageName} package. "
     else
-      fatalNotification.textContent = "This is likely a bug in Atom. "
+      fatalNotification.textContent = "This is likely a bug in Pulsar. "
 
     # We only show the create issue button if it's clearly in atom core or in a package with a repo url
     if issueButton.parentNode?
