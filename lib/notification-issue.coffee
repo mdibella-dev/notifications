@@ -53,7 +53,7 @@ class NotificationIssue
   getIssueUrl: ->
     @getIssueBody().then (issueBody) =>
       repoUrl = @getRepoUrl()
-      repoUrl = 'https://github.com/atom/atom' unless repoUrl?
+      repoUrl = 'https://github.com/pulsar-edit/pulsar' unless repoUrl?
       "#{repoUrl}/issues/new?title=#{@encodeURI(@getIssueTitle())}&body=#{@encodeURI(issueBody)}"
 
   encodeURI: (str) ->
