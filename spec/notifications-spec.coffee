@@ -390,7 +390,7 @@ describe "Notifications", ->
             expect(notificationContainer.childNodes.length).toBe 1
             expect(fatalError).toHaveClass 'has-close'
             expect(fatalError.innerHTML).toContain 'ReferenceError: a is not defined'
-            expect(fatalError.innerHTML).toContain "<a https://github.com/pulsar-edit/notifications\">notifications package</a>"
+            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/pulsar-edit/notifications\">notifications package</a>"
             expect(fatalError.issue.getPackageName()).toBe 'notifications'
 
             button = fatalError.querySelector('.btn')
