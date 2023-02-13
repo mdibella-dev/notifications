@@ -98,7 +98,7 @@ class NotificationIssue
         else if packageName?
           packageMessage = "'#{packageName}' package v#{packageVersion}"
         else
-          packageMessage = 'Atom Core'
+          packageMessage = 'Pulsar Core'
 
         @issueBody = """
           <!--
