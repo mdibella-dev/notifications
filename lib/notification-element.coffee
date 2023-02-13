@@ -208,8 +208,8 @@ class NotificationElement
 
           fatalNotification.innerHTML += """
             <br><br>
-            Locally installed core Atom package <code>#{packageName}</code> is out of date: #{packageCheck.installedVersion} installed locally;
-            #{packageCheck.versionShippedWithAtom} included with the version of Atom you're running.
+            Locally installed core Pulsar package <code>#{packageName}</code> is out of date: #{packageCheck.installedVersion} installed locally;
+            #{packageCheck.versionShippedWithAtom} included with the version of Pulsar you're running.
             Removing the locally installed version may fix this issue.
           """
 
@@ -223,7 +223,7 @@ class NotificationElement
           issueButton.remove()
 
           fatalNotification.innerHTML += """
-            Atom is out of date: #{atomCheck.installedVersion} installed;
+            Pulsar is out of date: #{atomCheck.installedVersion} installed;
             #{atomCheck.latestVersion} latest.
             Upgrading to the <a href='https://github.com/pulsar-edit/pulsar/releases/tag/v#{atomCheck.latestVersion}'>latest version</a> may fix this issue.
           """
