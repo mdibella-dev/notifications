@@ -108,7 +108,7 @@ module.exports =
       accept: 'application/vnd.github.v3+json',
       contentType: "application/json"
     })
-    fetch 'https://atom.io/api/updates', {headers: githubHeaders}
+    fetch 'https://atom.io/api/updates', {headers: githubHeaders}       ### needs modification ###
       .then (r) -> if r.ok then r.json() else Promise.reject r.statusCode
 
   checkAtomUpToDate: ->
