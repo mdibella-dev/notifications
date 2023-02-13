@@ -245,12 +245,12 @@ describe "Notifications", ->
 
     describe "when the `description` option is used", ->
       it "displays the description text in the .description element", ->
-        atom.notifications.addSuccess('A message', description: 'This is [a link](http://atom.io)')
+        atom.notifications.addSuccess('A message', description: 'This is [a link](https://pulsar-edit.dev)')
         notification = notificationContainer.querySelector('atom-notification.success')
         expect(notification).toHaveClass('has-description')
         expect(notification.querySelector('.meta')).toBeVisible()
         expect(notification.querySelector('.description').textContent.trim()).toBe 'This is a link'
-        expect(notification.querySelector('.description a').href).toBe 'http://atom.io/'
+        expect(notification.querySelector('.description a').href).toBe 'https://pulsar-edit.dev/'
 
     describe "when the `buttons` options is used", ->
       it "displays the buttons in the .description element", ->
