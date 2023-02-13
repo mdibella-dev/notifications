@@ -175,7 +175,7 @@ class NotificationElement
       if packageName? and repoUrl?
         issueButton.textContent = "Create issue on the #{packageName} package"
       else
-        issueButton.textContent = "Create issue on atom/atom"
+        issueButton.textContent = "Create issue on pulsar-edit/pulsar"
 
       promises = []
       promises.push @issue.findSimilarIssues()
