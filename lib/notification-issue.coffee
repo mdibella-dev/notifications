@@ -104,7 +104,7 @@ class NotificationIssue
           <!--
           Have you read Pulsar's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://pulsar-edit.dev/docs/resources/conduct/
 
-          Do you want to ask a question? Are you looking for support? The Pulsar message board is the best place for getting support: https://github.com/orgs/pulsar-edit/discussions
+          Do you want to ask a question? Are you looking for support? See our community areas to get in contact: https://pulsar-edit.dev/community.html
           -->
 
           ### Prerequisites
