@@ -168,14 +168,14 @@ class NotificationElement
       issueButton.remove()
       fatalNotification.textContent = "The error was thrown from the #{packageName} package. "
     else
-      fatalNotification.textContent = "This is likely a bug in Atom. "
+      fatalNotification.textContent = "This is likely a bug in Pulsar. "
 
     # We only show the create issue button if it's clearly in atom core or in a package with a repo url
     if issueButton.parentNode?
       if packageName? and repoUrl?
         issueButton.textContent = "Create issue on the #{packageName} package"
       else
-        issueButton.textContent = "Create issue on atom/atom"
+        issueButton.textContent = "Create issue on pulsar-edit/pulsar"
 
       promises = []
       promises.push @issue.findSimilarIssues()
@@ -208,8 +208,8 @@ class NotificationElement
 
           fatalNotification.innerHTML += """
             <br><br>
-            Locally installed core Atom package <code>#{packageName}</code> is out of date: #{packageCheck.installedVersion} installed locally;
-            #{packageCheck.versionShippedWithAtom} included with the version of Atom you're running.
+            Locally installed core Pulsar package <code>#{packageName}</code> is out of date: #{packageCheck.installedVersion} installed locally;
+            #{packageCheck.versionShippedWithAtom} included with the version of Pulsar you're running.
             Removing the locally installed version may fix this issue.
           """
 
@@ -223,9 +223,9 @@ class NotificationElement
           issueButton.remove()
 
           fatalNotification.innerHTML += """
-            Atom is out of date: #{atomCheck.installedVersion} installed;
+            Pulsar is out of date: #{atomCheck.installedVersion} installed;
             #{atomCheck.latestVersion} latest.
-            Upgrading to the <a href='https://github.com/atom/atom/releases/tag/v#{atomCheck.latestVersion}'>latest version</a> may fix this issue.
+            Upgrading to the <a href='https://github.com/pulsar-edit/pulsar/releases/tag/v#{atomCheck.latestVersion}'>latest version</a> may fix this issue.
           """
         else
           fatalNotification.innerHTML += " You can help by creating an issue. Please explain what actions triggered this error."

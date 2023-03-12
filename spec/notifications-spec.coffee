@@ -245,12 +245,12 @@ describe "Notifications", ->
 
     describe "when the `description` option is used", ->
       it "displays the description text in the .description element", ->
-        atom.notifications.addSuccess('A message', description: 'This is [a link](http://atom.io)')
+        atom.notifications.addSuccess('A message', description: 'This is [a link](https://pulsar-edit.dev)')
         notification = notificationContainer.querySelector('atom-notification.success')
         expect(notification).toHaveClass('has-description')
         expect(notification.querySelector('.meta')).toBeVisible()
         expect(notification.querySelector('.description').textContent.trim()).toBe 'This is a link'
-        expect(notification.querySelector('.description a').href).toBe 'http://atom.io/'
+        expect(notification.querySelector('.description a').href).toBe 'https://pulsar-edit.dev/'
 
     describe "when the `buttons` options is used", ->
       it "displays the buttons in the .description element", ->
@@ -390,7 +390,7 @@ describe "Notifications", ->
             expect(notificationContainer.childNodes.length).toBe 1
             expect(fatalError).toHaveClass 'has-close'
             expect(fatalError.innerHTML).toContain 'ReferenceError: a is not defined'
-            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/atom/notifications\">notifications package</a>"
+            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/pulsar-edit/notifications\">notifications package</a>"
             expect(fatalError.issue.getPackageName()).toBe 'notifications'
 
             button = fatalError.querySelector('.btn')
@@ -401,7 +401,7 @@ describe "Notifications", ->
             expect(issueBody).toMatch /Atom\*\*: [0-9].[0-9]+.[0-9]+/ig
             expect(issueBody).not.toMatch /Unknown/ig
             expect(issueBody).toContain 'ReferenceError: a is not defined'
-            expect(issueBody).toContain 'Thrown From**: [notifications](https://github.com/atom/notifications) package '
+            expect(issueBody).toContain 'Thrown From**: [notifications](https://github.com/pulsar-edit/notifications) package '
             expect(issueBody).toContain '### Non-Core Packages'
 
             # FIXME: this doesnt work on the test server. `apm ls` is not working for some reason.
@@ -459,7 +459,7 @@ describe "Notifications", ->
             {
               "name": "linked-package",
               "version": "1.0.0",
-              "repository": "https://github.com/atom/notifications"
+              "repository": "https://github.com/pulsar-edit/notifications"
             }
           """
           atom.packages.enablePackage('linked-package')
@@ -486,7 +486,7 @@ describe "Notifications", ->
             expect(notificationContainer.childNodes.length).toBe 1
             expect(fatalError).toHaveClass 'has-close'
             expect(fatalError.innerHTML).toContain "Uncaught ReferenceError: path is not defined"
-            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/atom/notifications\">linked-package package</a>"
+            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/pulsar-edit/notifications\">linked-package package</a>"
             expect(fatalError.issue.getPackageName()).toBe 'linked-package'
 
       describe "when an exception is thrown from an unloaded package", ->
@@ -521,7 +521,7 @@ describe "Notifications", ->
             expect(notificationContainer.childNodes.length).toBe 1
             expect(fatalError).toHaveClass 'has-close'
             expect(fatalError.innerHTML).toContain 'ReferenceError: unloaded error'
-            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/atom/notifications\">unloaded package</a>"
+            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/pulsar-edit/notifications\">unloaded package</a>"
             expect(fatalError.issue.getPackageName()).toBe 'unloaded'
 
       describe "when an exception is thrown from a package trying to load", ->
@@ -536,7 +536,7 @@ describe "Notifications", ->
             {
               "name": "broken-load",
               "version": "1.0.0",
-              "repository": "https://github.com/atom/notifications"
+              "repository": "https://github.com/pulsar-edit/notifications"
             }
           """
 
@@ -555,7 +555,7 @@ describe "Notifications", ->
             expect(notificationContainer.childNodes.length).toBe 1
             expect(fatalError).toHaveClass 'has-close'
             expect(fatalError.innerHTML).toContain "TypeError: Cannot read property 'prototype' of undefined"
-            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/atom/notifications\">broken-load package</a>"
+            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/pulsar-edit/notifications\">broken-load package</a>"
             expect(fatalError.issue.getPackageName()).toBe 'broken-load'
 
       describe "when an exception is thrown from a package trying to load a grammar", ->
@@ -570,7 +570,7 @@ describe "Notifications", ->
             {
               "name": "language-broken-grammar",
               "version": "1.0.0",
-              "repository": "https://github.com/atom/notifications"
+              "repository": "https://github.com/pulsar-edit/notifications"
             }
           """
 
@@ -602,7 +602,7 @@ describe "Notifications", ->
             expect(notificationContainer.childNodes.length).toBe 1
             expect(fatalError).toHaveClass 'has-close'
             expect(fatalError.innerHTML).toContain "Failed to load a language-broken-grammar package grammar"
-            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/atom/notifications\">language-broken-grammar package</a>"
+            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/pulsar-edit/notifications\">language-broken-grammar package</a>"
             expect(fatalError.issue.getPackageName()).toBe 'language-broken-grammar'
 
       describe "when an exception is thrown from a package trying to activate", ->
@@ -617,7 +617,7 @@ describe "Notifications", ->
             {
               "name": "broken-activation",
               "version": "1.0.0",
-              "repository": "https://github.com/atom/notifications"
+              "repository": "https://github.com/pulsar-edit/notifications"
             }
           """
 
@@ -636,7 +636,7 @@ describe "Notifications", ->
             expect(notificationContainer.childNodes.length).toBe 1
             expect(fatalError).toHaveClass 'has-close'
             expect(fatalError.innerHTML).toContain "TypeError: Cannot read property 'command' of undefined"
-            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/atom/notifications\">broken-activation package</a>"
+            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/pulsar-edit/notifications\">broken-activation package</a>"
             expect(fatalError.issue.getPackageName()).toBe 'broken-activation'
 
       describe "when an exception is thrown from a package without a trace, but with a URL", ->
@@ -659,7 +659,7 @@ describe "Notifications", ->
 
           runs ->
             expect(fatalError.innerHTML).toContain 'ReferenceError: a is not defined'
-            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/atom/notifications\">notifications package</a>"
+            expect(fatalError.innerHTML).toContain "<a href=\"https://github.com/pulsar-edit/notifications\">notifications package</a>"
             expect(fatalError.issue.getPackageName()).toBe 'notifications'
 
       describe "when an exception is thrown from core", ->
@@ -809,7 +809,7 @@ describe "Notifications", ->
           beforeEach ->
             generateFakeFetchResponses
               packageResponse:
-                repository: url: 'https://github.com/atom/notifications'
+                repository: url: 'https://github.com/pulsar-edit/notifications'
                 releases: latest: '0.11.0'
 
           describe "when the locally installed version is lower than Atom's version", ->
