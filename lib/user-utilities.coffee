@@ -108,7 +108,7 @@ module.exports =
       accept: 'application/vnd.github.v3+json',
       contentType: "application/json"
     })
-    fetch 'https://atom.io/api/updates', {headers: githubHeaders}
+    fetch 'https://api.pulsar-edit.dev/api/updates', {headers: githubHeaders}
       .then (r) -> if r.ok then r.json() else Promise.reject new Error "Fetching updates resulted in status #{r.status}"
 
   checkAtomUpToDate: ->
@@ -130,7 +130,7 @@ module.exports =
       accept: 'application/vnd.github.v3+json',
       contentType: "application/json"
     })
-    fetch "https://atom.io/api/packages/#{packageName}", {headers: githubHeaders}
+    fetch "https://api.pulsar-edit.dev/api/packages/#{packageName}", {headers: githubHeaders}
       .then (r) -> if r.ok then r.json() else Promise.reject new Error "Fetching package resulted in status #{r.status}"
 
   checkPackageUpToDate: (packageName) ->
