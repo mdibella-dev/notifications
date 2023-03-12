@@ -130,7 +130,7 @@ module.exports =
       accept: 'application/vnd.github.v3+json',
       contentType: "application/json"
     })
-    fetch "https://web.pulsar-edit.dev/packages/#{packageName}", {headers: githubHeaders}
+    fetch "https://api.pulsar-edit.dev/api/packages/#{packageName}", {headers: githubHeaders}
       .then (r) -> if r.ok then r.json() else Promise.reject r.statusCode
 
   checkPackageUpToDate: (packageName) ->
