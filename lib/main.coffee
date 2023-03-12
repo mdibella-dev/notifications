@@ -23,7 +23,7 @@ Notifications =
         message = message.replace('Uncaught BufferedProcessError: ', '')
         atom.notifications.addError(message, dismissable: true)
 
-      else if originalError.code is 'ENOENT' and not /\/atom/i.test(message) and match = /spawn (.+) ENOENT/.exec(message)
+      else if originalError.code is 'ENOENT' and not /\/pulsar/i.test(message) and match = /spawn (.+) ENOENT/.exec(message)
         message = """
           '#{match[1]}' could not be spawned.
           Is it installed and on your path?

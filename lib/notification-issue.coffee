@@ -15,7 +15,7 @@ class NotificationIssue
 
   findSimilarIssues: ->
     repoUrl = @getRepoUrl()
-    repoUrl = 'atom/atom' unless repoUrl?
+    repoUrl = 'pulsar-edit/pulsar' unless repoUrl?
     repo = repoUrl.replace /http(s)?:\/\/(\d+\.)?github.com\//gi, ''
     issueTitle = @getIssueTitle()
     query = "#{issueTitle} repo:#{repo}"
@@ -196,16 +196,16 @@ class NotificationIssue
   getPackageNameFromFilePath: (filePath) ->
     return unless filePath
 
-    packageName = /\/\.atom\/dev\/packages\/([^\/]+)\//.exec(filePath)?[1]
+    packageName = /\/\.pulsar\/dev\/packages\/([^\/]+)\//.exec(filePath)?[1]
     return packageName if packageName
 
-    packageName = /\\\.atom\\dev\\packages\\([^\\]+)\\/.exec(filePath)?[1]
+    packageName = /\\\.pulsar\\dev\\packages\\([^\\]+)\\/.exec(filePath)?[1]
     return packageName if packageName
 
-    packageName = /\/\.atom\/packages\/([^\/]+)\//.exec(filePath)?[1]
+    packageName = /\/\.pulsar\/packages\/([^\/]+)\//.exec(filePath)?[1]
     return packageName if packageName
 
-    packageName = /\\\.atom\\packages\\([^\\]+)\\/.exec(filePath)?[1]
+    packageName = /\\\.pulsar\\packages\\([^\\]+)\\/.exec(filePath)?[1]
     return packageName if packageName
 
   getPackageName: ->
@@ -216,7 +216,7 @@ class NotificationIssue
 
     packagePaths = @getPackagePathsByPackageName()
     for packageName, packagePath of packagePaths
-      if packagePath.indexOf(path.join('.atom', 'dev', 'packages')) > -1 or packagePath.indexOf(path.join('.atom', 'packages')) > -1
+      if packagePath.indexOf(path.join('.pulsar', 'dev', 'packages')) > -1 or packagePath.indexOf(path.join('.pulsar', 'packages')) > -1
         packagePaths[packageName] = fs.realpathSync(packagePath)
 
     getPackageName = (filePath) =>
