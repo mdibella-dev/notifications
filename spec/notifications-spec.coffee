@@ -348,12 +348,12 @@ describe "Notifications", ->
         beforeEach ->
           stack = """
             TypeError: undefined is not a function
-              at Object.module.exports.Pane.promptToSaveItem [as defaultSavePrompt] (/Applications/Atom.app/Contents/Resources/app/src/pane.js:490:23)
-              at Pane.promptToSaveItem (/Users/someguy/.atom/packages/save-session/lib/save-prompt.coffee:21:15)
-              at Pane.module.exports.Pane.destroyItem (/Applications/Atom.app/Contents/Resources/app/src/pane.js:442:18)
-              at HTMLDivElement.<anonymous> (/Applications/Atom.app/Contents/Resources/app/node_modules/tabs/lib/tab-bar-view.js:174:22)
-              at space-pen-ul.jQuery.event.dispatch (/Applications/Atom.app/Contents/Resources/app/node_modules/archive-view/node_modules/atom-space-pen-views/node_modules/space-pen/vendor/jquery.js:4676:9)
-              at space-pen-ul.elemData.handle (/Applications/Atom.app/Contents/Resources/app/node_modules/archive-view/node_modules/atom-space-pen-views/node_modules/space-pen/vendor/jquery.js:4360:46)
+              at Object.module.exports.Pane.promptToSaveItem [as defaultSavePrompt] (/Applications/Pulsar.app/Contents/Resources/app/src/pane.js:490:23)
+              at Pane.promptToSaveItem (/Users/someguy/.pulsar/packages/save-session/lib/save-prompt.coffee:21:15)
+              at Pane.module.exports.Pane.destroyItem (/Applications/Pulsar.app/Contents/Resources/app/src/pane.js:442:18)
+              at HTMLDivElement.<anonymous> (/Applications/Pulsar.app/Contents/Resources/app/node_modules/tabs/lib/tab-bar-view.js:174:22)
+              at space-pen-ul.jQuery.event.dispatch (/Applications/Pulsar.app/Contents/Resources/app/node_modules/archive-view/node_modules/atom-space-pen-views/node_modules/space-pen/vendor/jquery.js:4676:9)
+              at space-pen-ul.elemData.handle (/Applications/Pulsar.app/Contents/Resources/app/node_modules/archive-view/node_modules/atom-space-pen-views/node_modules/space-pen/vendor/jquery.js:4360:46)
           """
           detail = 'ok'
 
@@ -398,7 +398,7 @@ describe "Notifications", ->
 
             expect(issueTitle).toContain '$ATOM_HOME'
             expect(issueTitle).not.toContain process.env.ATOM_HOME
-            expect(issueBody).toMatch /Atom\*\*: [0-9].[0-9]+.[0-9]+/ig
+            expect(issueBody).toMatch /Pulsar\*\*: [0-9].[0-9]+.[0-9]+/ig
             expect(issueBody).not.toMatch /Unknown/ig
             expect(issueBody).toContain 'ReferenceError: a is not defined'
             expect(issueBody).toContain 'Thrown From**: [notifications](https://github.com/pulsar-edit/notifications) package '
@@ -496,8 +496,8 @@ describe "Notifications", ->
           generateFakeFetchResponses()
 
           packagesDir = temp.mkdirSync('atom-packages-')
-          atom.packages.packageDirPaths.push(path.join(packagesDir, '.atom', 'packages'))
-          packageDir = path.join(packagesDir, '.atom', 'packages', 'unloaded')
+          atom.packages.packageDirPaths.push(path.join(packagesDir, '.pulsar', 'packages'))
+          packageDir = path.join(packagesDir, '.pulsar', 'packages', 'unloaded')
           fs.writeFileSync path.join(packageDir, 'package.json'), """
             {
               "name": "unloaded",
