@@ -1,4 +1,4 @@
-# This repo is now archived under Pulsar-Edit as it is Bundled into the core editor [#424](https://github.com/pulsar-edit/pulsar/pull/424)
+# This repo is now archived under Pulsar-Edit as it is Bundled into the core editor [#424](https://github.com/pulsar-edit/pulsar/pull/529)
 
 # Notifications package
 
